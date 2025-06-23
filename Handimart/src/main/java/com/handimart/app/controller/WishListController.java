@@ -13,7 +13,7 @@ public class WishListController {
     @Autowired
     private WishListService wishListService;
 
-    @PostMapping
+    @PostMapping("/")
     public WishListResponse createWishList(@RequestBody WishListRequest request){
         return wishListService.createWishList(request);
     }

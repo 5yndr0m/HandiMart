@@ -49,11 +49,12 @@ public class WishListItemServiceImp implements WishListItemService{
     }
 
     @Override
-    public void removeWishListItem(Long wishListItemId) {
+    public String removeWishListItem(Long wishListItemId) {
         if(!wishListItemRepository.existsById(wishListItemId)){
             throw new NoSuchElementException("WishList Item not found");
         }
         wishListItemRepository.deleteById(wishListItemId);
+        return "Item removed from wishlist";
     }
 
     private WishListItemResponse mapToResponse(WishListItem item) {
