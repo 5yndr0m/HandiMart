@@ -2,7 +2,6 @@ package com.handimart.app.controller;
 
 import com.handimart.app.model.SellerProfile;
 import com.handimart.app.model.User;
-import com.handimart.app.response.ContentPostResponse;
 import com.handimart.app.service.SellerProfileService;
 import com.handimart.app.service.UserService;
 

@@ -12,5 +12,6 @@ public interface SellerRatingService {
 	List<SellerRatingResponse> getRatingsBySeller(Long sellerId);
 	List<SellerRatingResponse> getAllRatings();
 	SellerRatingResponse updateRating(Long ratingId, Integer newRating);
-	void deleteRating(Long ratingId);
+	String deleteRating(Long ratingId);
+	
 }

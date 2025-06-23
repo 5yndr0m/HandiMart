@@ -1,6 +1,7 @@
 package com.handimart.app.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -43,8 +44,7 @@ public class SellerRatingController {
     }
 
     @DeleteMapping("/{id}")
-    public ResponseEntity<Void> deleteRating(@PathVariable Long id) {
-        ratingService.deleteRating(id);
-        return ResponseEntity.noContent().build();
+    public ResponseEntity<String> deleteRating(@PathVariable Long id) {
+        return new ResponseEntity<String>(ratingService.deleteRating(id), HttpStatus.OK);
     }
 }

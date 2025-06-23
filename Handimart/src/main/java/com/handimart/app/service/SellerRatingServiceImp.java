@@ -87,13 +87,14 @@ public class SellerRatingServiceImp  implements SellerRatingService{
 	}
 
 	@Override
-	public void deleteRating(Long ratingId) {
+	public String deleteRating(Long ratingId) {
 		 SellerRating rating = sellerRatingRepository.findById(ratingId)
 		            .orElseThrow(() -> new RuntimeException("Rating not found"));
 
 		        User seller = rating.getSeller();
 		        sellerRatingRepository.delete(rating);
 		        recalculateSellerRating(seller);
+		 return "Rating removed";
 	}
 	
 	 private void recalculateSellerRating(User seller) {
